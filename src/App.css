@@ -23,7 +23,7 @@
 }
 
 .box {
-  border: 3px solid #FFF;
+  border: 5px solid transparent;
   width: 100px;
   height: 100px;
   max-width: 100%;
@@ -38,6 +38,10 @@
   border-radius: 3px;
 }
 
-.box:hover, .box:focus {
-  border: 3px dashed #444;
+.box:focus {
+  border: 5px dashed #33C1FF;
+}
+
+.box:hover {
+  background-color: #33C1FF;
 }
