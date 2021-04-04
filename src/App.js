@@ -22,12 +22,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       30 Days of Chess ♟️
+       <h2>30 Days of Chess ♟️</h2>
+       <p>A beginner's guide to basic knowledge of chess in 30 days.</p>
       </header>
       <main className="box-grid">
       {grid.map((row, rowId) => {
           return (
-            <div key={rowId}>
+            <div className="column" key={rowId}>
               {row.map((node, nodeId) => {
                 return node;
               })}
