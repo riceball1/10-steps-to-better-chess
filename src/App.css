@@ -23,7 +23,7 @@
 }
 
 .box {
-  border: 1px solid #FFF;
+  border: 3px solid #FFF;
   width: 100px;
   height: 100px;
   max-width: 100%;
@@ -36,4 +36,8 @@
   font-style: bold;
   background-color: #FFF;
   border-radius: 3px;
+}
+
+.box:hover, .box:focus {
+  border: 3px dashed #444;
 }

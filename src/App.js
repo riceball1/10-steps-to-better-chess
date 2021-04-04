@@ -10,9 +10,9 @@ function App() {
     for (let col = 0; col < GRID_COL_LENGTH; col++) {
       const id = row + (col * GRID_ROW_LENGTH) + 1; 
       if(id <=75) {
-        currentRow.push(<div className="box" id={id}>{id}</div>);
+        currentRow.push(<div className="box" id={id} tabindex={id}>{id}</div>);
       } else {
-        currentRow.push(<div className="box" id={id}></div>)
+        currentRow.push(<div className="box" id={id} tabindex="0"></div>)
       }
     }
     grid.push(currentRow);
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <h2>30 Days of Chess ♟️</h2>
+       <h1>30 Days of Chess ♟️</h1>
        <p>A beginner's guide to basic knowledge of chess in 30 days.</p>
       </header>
       <main className="box-grid">
