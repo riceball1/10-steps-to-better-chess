@@ -1,5 +1,4 @@
 import './App.css';
-import {database as data} from './database';
 
 function App() {
   const GRID_ROW_LENGTH = 5;
