@@ -1,4 +1,4 @@
-# 30 Days of Chess
+# 10 Steps to Better Chess
 
 ## Setup
 
