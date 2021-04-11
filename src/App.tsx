@@ -1,21 +1,16 @@
 import "./App.css";
 
 function App() {
-  const GRID_ROW_LENGTH = 5;
-  const GRID_COL_LENGTH = 2;
+  const TOTAL_GRID_LENGTH = 10;
 
   const grid = [];
-  for (let row = 0; row < GRID_ROW_LENGTH; row++) {
-    const currentRow = [];
-    for (let col = 0; col < GRID_COL_LENGTH; col++) {
-      const id = row + col * GRID_ROW_LENGTH + 1!;
-        currentRow.push(
-          <div className="box" id={`${id}`} tabIndex={id}>
-            {id}
-          </div>
-      );
-    }
-    grid.push(currentRow);
+  for (let boxLength = 0; boxLength < TOTAL_GRID_LENGTH; boxLength++) {
+    const id = boxLength + 1;
+    grid.push(
+      <div className="box" id={`${id}`} tabIndex={id}>
+        {id}
+      </div>
+    );
   }
 
   return (
@@ -24,17 +19,7 @@ function App() {
         <h1>10 Steps to Better Chess ♟️</h1>
         <p>A beginner's guide to chess.</p>
       </header>
-      <main className="box-grid">
-        {grid.map((row, rowId) => {
-          return (
-            <div className="column" key={rowId}>
-              {row.map((node, nodeId) => {
-                return node;
-              })}
-            </div>
-          );
-        })}
-      </main>
+      <main className="box-grid">{grid.map((box) => box)}</main>
     </div>
   );
 }
