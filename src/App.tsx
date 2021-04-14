@@ -1,25 +1,22 @@
+/**
+ * App - main file to start page
+ */
+import Box from '../src/components/Box/Box';
 import "./App.css";
 
 function App() {
-  const TOTAL_GRID_LENGTH = 10;
-
-  const grid = [];
-  for (let boxLength = 0; boxLength < TOTAL_GRID_LENGTH; boxLength++) {
-    const id = boxLength + 1;
-    grid.push(
-      <div className="box" id={`${id}`} tabIndex={id}>
-        {id}
-      </div>
-    );
-  }
-
+  const boxes = new Array(10).fill(null);
+  console.log('boxes', boxes)
+  
   return (
     <div className="App">
       <header className="App-header">
         <h1>10 Steps to Better Chess ♟️</h1>
         <p>A beginner's guide to chess.</p>
       </header>
-      <main className="box-grid">{grid.map((box) => box)}</main>
+      <main>
+        {boxes.map((_, index) => <Box stepValue={index + 1} key={index} />)}
+      </main>
     </div>
   );
 }
