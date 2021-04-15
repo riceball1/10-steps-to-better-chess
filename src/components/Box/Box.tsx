@@ -6,6 +6,7 @@ import React from "react";
 type BoxProps = {
   isOpen: boolean;
   stepValue: number;
+  onClick: (stepValue: number) => void;
 };
 
 function Box(props: BoxProps) {
