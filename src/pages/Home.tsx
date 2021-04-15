@@ -3,9 +3,10 @@ import Box from "../components/Box/Box";
 function Home() {
   const boxes = new Array(10).fill(null);
 
-  const handleBoxClick = (value: number) => {
-    const url = `${window.location}/${value}`;
-    console.log('url', url)
+  const handleBoxClick = (stepValue: number) => {
+    console.log(stepValue)
+    const url = `${window.location.pathname}/${stepValue}`;
+    window.location.href = url;
   };
 
   return (
@@ -21,7 +22,7 @@ function Home() {
             <Box
               stepValue={stepValue}
               key={index}
-              onClick={(stepValue: number) => handleBoxClick(stepValue)}
+              onHandleBoxClick={() => handleBoxClick(stepValue)}
             />
           );
         })}

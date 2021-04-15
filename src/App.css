@@ -41,3 +41,15 @@
 .box:hover {
   background-color: #33C1FF;
 }
+
+
+.link {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  color: #33C1FF;
+}

@@ -10,14 +10,13 @@ import "./App.css";
 const routes = {
   "/10-steps-to-better-chess": () => <Home />,
   "/10-steps-to-better-chess/:value": ({ value }) => {
-    return typeof value == "number" ? <StepPage value={value} /> : null;
+    const num = Number(value);
+    return typeof num == "number" ? <StepPage value={num} /> : <NotFoundPage />;
   },
 };
 
 function App() {
   const routeResult = useRoutes(routes);
-  console.log("routeResult", routeResult);
-
   return routeResult || <NotFoundPage />;
 }
 

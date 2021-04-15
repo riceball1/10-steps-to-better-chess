@@ -4,16 +4,14 @@
 import React from "react";
 
 type BoxProps = {
-  isOpen: boolean;
   stepValue: number;
-  onClick: (stepValue: number) => void;
+  onHandleBoxClick: () => void
 };
 
 function Box(props: BoxProps) {
   return (
     <>
-      <div className="box">Step {props.stepValue}</div>
-      {props.isOpen && <div>Content Showing</div>}
+      <div className="box" onClick={props.onHandleBoxClick}>Step {props.stepValue}</div>
     </>
   );
 }
