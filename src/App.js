@@ -1,23 +1,32 @@
 /**
  * App - main file to start page
  */
-import { useRoutes } from "hookrouter";
-import NotFoundPage from "./pages/NotFoundPage";
+import { useState } from "react";
 import Home from "./pages/Home";
 import StepPage from "./pages/StepPage";
 import "./App.css";
 
-const routes = {
-  "/10-steps-to-better-chess/": () => <Home />,
-  "/10-steps-to-better-chess/:value": ({ value }) => {
-    const num = Number(value);
-    return typeof num == "number" ? <StepPage value={num} /> : <NotFoundPage />;
-  },
-};
-
 function App() {
-  const routeResult = useRoutes(routes);
-  return routeResult || <NotFoundPage />;
+  const [changePage, setChangePage] = useState(null);
+
+  const handleChangePage = (page) => {
+    setChangePage(page);
+  };
+  switch (changePage) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+      return <StepPage value={changePage} onPageChange={handleChangePage} />;
+    default:
+      return <Home onPageChange={handleChangePage} />;
+  }
 }
 
 export default App;

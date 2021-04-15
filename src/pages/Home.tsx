@@ -1,13 +1,13 @@
 import Box from "../components/Box/Box";
 
-function Home() {
-  const boxes = new Array(10).fill(null);
+type Props = {
+  onPageChange: (
+    value: string | number | React.MouseEventHandler<HTMLParagraphElement>
+  ) => void;
+};
 
-  const handleBoxClick = (stepValue: number) => {
-    console.log(stepValue)
-    const url = `${window.location.pathname}/${stepValue}`;
-    window.location.href = url;
-  };
+function Home(props: Props) {
+  const boxes = new Array(10).fill(null);
 
   return (
     <div className="App">
@@ -22,7 +22,7 @@ function Home() {
             <Box
               stepValue={stepValue}
               key={index}
-              onHandleBoxClick={() => handleBoxClick(stepValue)}
+              onPageChange={props.onPageChange}
             />
           );
         })}

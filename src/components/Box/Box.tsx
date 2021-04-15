@@ -5,15 +5,13 @@ import React from "react";
 
 type BoxProps = {
   stepValue: number;
-  onHandleBoxClick: () => void
+  onPageChange: (
+    value: string | number | React.MouseEventHandler<HTMLParagraphElement>
+  ) => void;
 };
 
 function Box(props: BoxProps) {
-  return (
-    <>
-      <div className="box" onClick={props.onHandleBoxClick}>Step {props.stepValue}</div>
-    </>
-  );
+  return <div className="box" onClick={() => props.onPageChange(props.stepValue)}>Step {props.stepValue}</div>;
 }
 
 Box.defaultProps = {
