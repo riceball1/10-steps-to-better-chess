@@ -11,7 +11,9 @@ type BoxProps = {
 };
 
 function Box(props: BoxProps) {
-  return <div className="box" onClick={() => props.onPageChange(props.stepValue)}>Step {props.stepValue}</div>;
+
+  const handlePageChange = () => props.onPageChange(props.stepValue);
+  return <div className="box" onClick={handlePageChange} role="button" tabIndex={props.stepValue} onKeyDown={handlePageChange}>Step {props.stepValue}</div>;
 }
 
 Box.defaultProps = {

@@ -6,12 +6,15 @@ type StepPageProps = {
 };
 
 function StepPage(props: StepPageProps) {
+
+    const handlePageChange = () => props.onPageChange('');
+
   return (
     <div className="App">
       <h1>{props.value}</h1>
-      <p className="link" onClick={() => props.onPageChange('')}>
+      <button className="button" onClick={handlePageChange} onKeyDown={handlePageChange}>
         Go Home
-      </p>
+      </button>
     </div>
   );
 }

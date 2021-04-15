@@ -54,3 +54,18 @@
 .link:hover {
   color: #33C1FF;
 }
+
+.button {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.button:hover  {
+  background-color: #33C1FF;
+}
+
+.button:focus {
+   background-color: #33C1FF;
+   border: 0;
+}
