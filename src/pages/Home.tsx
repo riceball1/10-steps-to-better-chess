@@ -1,4 +1,4 @@
-import Box from "../components/Box/Box";
+const anime = require('animejs');
 
 type Props = {
   onPageChange: (
@@ -7,27 +7,86 @@ type Props = {
 };
 
 function Home(props: Props) {
-  const boxes = new Array(10).fill(null);
+
+  const section = document.querySelector('section');
+const chess = document.querySelector('#chess');
+
+section?.addEventListener('click', action, { once: true })
+
+let offset = '-=200'
+let base = 104
+
+function action() {
+  chess?.remove()
+  let tl = anime.timeline({
+    duration: 400,
+    loop: true
+  })
+
+  tl.add({ targets: 'div:nth-child(1)', translateY: -base })
+    .add(
+      {
+        targets: 'div:nth-child(2)',
+        translateY: -base,
+        translateX: base
+      },
+      offset
+    )
+    .add({ targets: 'div:nth-child(3)', translateX: base }, offset)
+    .add(
+      {
+        targets: 'div:nth-child(4)',
+        translateY: base,
+        translateX: base
+      },
+      offset
+    )
+    .add({ targets: 'div:nth-child(5)', translateY: base }, offset)
+    .add(
+      {
+        targets: 'div:nth-child(6)',
+        translateY: base,
+        translateX: -base
+      },
+      offset
+    )
+    .add({ targets: 'div:nth-child(7)', translateX: -base }, offset)
+    .add(
+      {
+        targets: 'div:nth-child(8)',
+        translateY: -base,
+        translateX: -base
+      },
+      offset
+    )
+    .add({
+      targets: 'div',
+      rotate: 90,
+      easing: 'linear',
+      duration: 400
+    })
+    .add({
+      targets: 'div',
+      translateY: 0,
+      translateX: 0,
+      delay: anime.stagger(base, { direction: 'reverse' })
+    })
+    .add({ targets: section, rotate: 90 })
+}
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>10 Steps to Better Chess ♟️</h1>
-        <p>A beginner's guide to chess.</p>
-      </header>
-      <main>
-        {boxes.map((_, index) => {
-          const stepValue = index + 1;
-          return (
-            <Box
-              stepValue={stepValue}
-              key={index}
-              onPageChange={props.onPageChange}
-            />
-          );
-        })}
-      </main>
-    </div>
+    <section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="chess"><h1>Chess</h1></div>
+  </section>
   );
 }
 
