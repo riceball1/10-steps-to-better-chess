@@ -1,33 +1,23 @@
 body {
-  font-family: Montserrat;
-  min-height: 100vh;
+  background-color: black;
+}
+
+.container {
+  margin: auto 10%;
+  width: 100%;
+}
+
+
+.box {
+  height: 50px;
+  width: 50px;
+  margin-top: 5px;
+  background-color: #d3d;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1.5rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-section {
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 100px;
-  grid-template-rows: 100px;
-  /* overflow: hidden; */
-}
-
-/* put images on the same grid cell */
-div {
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 0;
-  position: relative; /* for z-index to work properly */
-  background-color: hsl(35, 100%, 63%);
-}
-
-.h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  align-content: center;
 }

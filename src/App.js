@@ -1,32 +1,35 @@
 /**
  * App - main file to start page
  */
-import { useState } from "react";
-import Home from "./pages/Home";
-import StepPage from "./pages/StepPage";
+import ReactAnime from "react-animejs";
 import "./App.css";
+const { Anime } = ReactAnime;
 
 function App() {
-  const [changePage, setChangePage] = useState(null);
-
-  const handleChangePage = (page) => {
-    setChangePage(page);
-  };
-  switch (changePage) {
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-    case 8:
-    case 9:
-    case 10:
-      return <StepPage value={changePage} onPageChange={handleChangePage} />;
-    default:
-      return <Home onPageChange={handleChangePage} />;
-  }
+  return (
+    <Anime
+      initial={[
+        {
+          targets: ".box",
+          delay: 80,
+          direction: "alternate",
+          easing: "linear",
+          duration: 4000,
+          translateX: 500,
+          loop: true,
+          autoplay: true,
+        },
+      ]}
+    >
+      <div className="container">
+        <div className="box">C</div>
+        <div className="box">H</div>
+        <div className="box">E</div>
+        <div className="box">S</div>
+        <div className="box">S</div>
+      </div>
+    </Anime>
+  );
 }
 
 export default App;

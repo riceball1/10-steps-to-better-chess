@@ -1,5 +1,6 @@
-# 10 Steps to Better Chess
+# Learn Chess
 
-## Setup
+## Getting Started
 
-react gh-pages https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+This site was built using react and deployed using [react gh-pages](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f). 
+
