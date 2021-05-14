@@ -11,11 +11,11 @@ function App() {
       initial={[
         {
           targets: ".box",
-          delay: 80,
+          delay: 100,
           direction: "alternate",
-          easing: "linear",
-          duration: 4000,
-          translateX: 500,
+          easing: "spring",
+          duration: 3000,
+          translateX: 50,
           loop: true,
           autoplay: true,
         },
