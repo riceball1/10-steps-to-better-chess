@@ -3,21 +3,38 @@ body {
 }
 
 .container {
-  margin: auto 10%;
-  width: 100%;
+  margin: 0px auto;
+  margin-top: 5%;
+  width: 50%;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
+/** source: https://tobiasahlin.com/moving-letters/#6 */
 
-.box {
-  height: 50px;
-  width: 50px;
-  margin-top: 5px;
-  background-color: #d3d;
-  text-align: center;
-  border-radius: 6px;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+.ml6 {
+  position: relative;
+  font-weight: 900;
+}
+
+.text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.letter {
+  display: inline-block;
+  line-height: 1em;
+  color: rgb(20, 150, 179);
+}
+
+#chesspiece {
+  width: 100px;
+  height: auto;
+  margin: 0px auto;
+  display: block;
 }
